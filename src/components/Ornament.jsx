@@ -1,3 +1,5 @@
+import { imageUrl } from '../utils/imageUrl'
+
 /**
  * Decorative illustration from /public/images/ornaments.
  * It floats behind the content and never blocks clicks.
@@ -6,7 +8,7 @@
 export function Ornament({ name, className = '' }) {
   return (
     <img
-      src={`/images/ornaments/${name}.webp`}
+      src={imageUrl(`ornaments/${name}.webp`)}
       alt=""
       aria-hidden="true"
       loading="lazy"

@@ -3,6 +3,7 @@ import { Container } from '../components/Container'
 import { BrushHeading } from '../components/BrushHeading'
 import { GiftCard } from '../components/GiftCard'
 import { gifts } from '../data/gifts'
+import { imageUrl } from '../utils/imageUrl'
 
 // Gift list: title, intro, lace trim and the grid of gifts.
 export function Gifts() {
@@ -19,7 +20,7 @@ export function Gifts() {
               <p key={line}>{line}</p>
             ))}
           </div>
-          <img className="h-auto w-[min(414px,100%)]" src="/images/ornaments/scallop-trim.svg" alt="" aria-hidden="true" />
+          <img className="h-auto w-[min(414px,100%)]" src={imageUrl('ornaments/scallop-trim.svg')} alt="" aria-hidden="true" />
         </header>
 
         {/* One column on phones, two on tablets, three on desktop */}

@@ -3,6 +3,7 @@ import { Container } from '../components/Container'
 import { Ornament } from '../components/Ornament'
 import { BrushHeading } from '../components/BrushHeading'
 import { wedding } from '../data/wedding'
+import { imageUrl } from '../utils/imageUrl'
 
 // "Olha que fofinhos": title, couple photo and a short text.
 export function Story() {
@@ -16,7 +17,7 @@ export function Story() {
 
         <img
           className="aspect-[339/453] w-full max-w-[339px] object-cover"
-          src="/images/photos/couple-beach.webp"
+          src={imageUrl('photos/couple-beach.webp')}
           alt={t('story.photoAlt', wedding.couple)}
         />
 

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from '../components/Button'
+import { imageUrl } from '../utils/imageUrl'
 
 // Two full-width photos with a button each: confirm attendance and give a gift.
 const ACTIONS = [
@@ -16,7 +17,7 @@ export function ActionPhotos() {
         <div key={action.id} className="relative aspect-[4/3] overflow-hidden md:aspect-[512/576]">
           <img
             className="h-full w-full object-cover"
-            src={`/images/photos/${action.photo}`}
+            src={imageUrl(`photos/${action.photo}`)}
             alt={t(`actions.${action.id}PhotoAlt`)}
             loading="lazy"
           />

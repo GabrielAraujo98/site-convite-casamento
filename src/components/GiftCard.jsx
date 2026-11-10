@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { wedding } from '../data/wedding'
+import { imageUrl } from '../utils/imageUrl'
 
 /**
  * One gift: photo, framed title, joke note and price.
@@ -25,7 +26,7 @@ export function GiftCard({ id, image, price }) {
     <article className="flex flex-col gap-[5px]">
       <img
         className="aspect-[268/340] w-full object-cover"
-        src={`/images/gifts/${image}`}
+        src={imageUrl(`gifts/${image}`)}
         alt={title}
         loading="lazy"
       />

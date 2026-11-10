@@ -10,7 +10,12 @@ npm run dev      # local dev server at http://localhost:5173
 npm run build    # production build in dist/
 npm run preview  # preview the production build locally
 npm run lint     # oxlint
+npm run deploy   # build and publish to GitHub Pages
 ```
+
+Live site: https://gabrielaraujo98.github.io/site-convite-casamento/
+
+`npm run deploy` builds the site and pushes `dist/` to the `gh-pages` branch, which GitHub Pages serves. Images in `public/images` must be referenced with `imageUrl()` (`src/utils/imageUrl.js`) so they work under the `/site-convite-casamento/` path.
 
 ## Structure
 
