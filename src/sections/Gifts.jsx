@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Section } from '../components/Section'
 import { wedding } from '../data/wedding'
 
 export function Gifts() {
-  const { message, pixKey, listUrl } = wedding.gifts
+  const { t } = useTranslation()
+  const { pixKey, listUrl } = wedding.gifts
   const [copied, setCopied] = useState(false)
 
   async function copyPix() {
@@ -17,21 +19,21 @@ export function Gifts() {
   }
 
   return (
-    <Section id="gifts" title="Gifts">
-      <p className="center prose">{message}</p>
+    <Section id="gifts" title={t('gifts.title')}>
+      <p className="center prose">{t('gifts.message')}</p>
       <div className="gifts">
         <div className="card">
-          <h3>PIX</h3>
+          <h3>{t('gifts.pixTitle')}</h3>
           <p className="mono">{pixKey}</p>
           <button className="button button--ghost" onClick={copyPix}>
-            {copied ? 'Copied!' : 'Copy key'}
+            {copied ? t('gifts.copied') : t('gifts.copyKey')}
           </button>
         </div>
         {listUrl && (
           <div className="card">
-            <h3>Gift registry</h3>
+            <h3>{t('gifts.registryTitle')}</h3>
             <a href={listUrl} target="_blank" rel="noreferrer" className="button">
-              View registry
+              {t('gifts.viewRegistry')}
             </a>
           </div>
         )}

@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Section } from '../components/Section'
 import { wedding } from '../data/wedding'
+import { useDateFormat } from '../hooks/useDateFormat'
 
 const initialForm = { name: '', attending: 'yes', guests: 1, message: '' }
 
 export function Rsvp() {
+  const { t } = useTranslation()
+  const { formatLongDate } = useDateFormat()
   const [form, setForm] = useState(initialForm)
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
@@ -36,29 +40,30 @@ export function Rsvp() {
   }
 
   return (
-    <Section id="rsvp" title="RSVP" className="section--alt">
-      <p className="center muted">Please reply by {wedding.rsvp.deadlineLabel}.</p>
+    <Section id="rsvp" title={t('rsvp.title')} className="section--alt">
+      <p className="center">{t('rsvp.subtitle')}</p>
+      <p className="center muted">{t('rsvp.deadline', { date: formatLongDate(wedding.rsvp.deadline) })}</p>
 
       {status === 'sent' ? (
-        <p className="center success">Thank you! Your reply has been received.</p>
+        <p className="center success">{t('rsvp.sent')}</p>
       ) : (
         <form className="form" onSubmit={handleSubmit}>
           <label>
-            Full name
+            {t('rsvp.nameLabel')}
             <input required value={form.name} onChange={updateField('name')} />
           </label>
 
           <label>
-            Will you attend?
+            {t('rsvp.attendingLabel')}
             <select value={form.attending} onChange={updateField('attending')}>
-              <option value="yes">Yes, I will be there</option>
-              <option value="no">Sorry, I cannot make it</option>
+              <option value="yes">{t('rsvp.attendingYes')}</option>
+              <option value="no">{t('rsvp.attendingNo')}</option>
             </select>
           </label>
 
           {form.attending === 'yes' && (
             <label>
-              Number of guests (including you)
+              {t('rsvp.guestsLabel')}
               <input
                 type="number"
                 min="1"
@@ -70,16 +75,16 @@ export function Rsvp() {
           )}
 
           <label>
-            Message for the couple (optional)
+            {t('rsvp.messageLabel')}
             <textarea rows="3" value={form.message} onChange={updateField('message')} />
           </label>
 
           <button className="button" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Sending...' : 'Send reply'}
+            {status === 'sending' ? t('rsvp.sending') : t('rsvp.submit')}
           </button>
 
           {status === 'error' && (
-            <p className="error">Could not send your reply. Please try again.</p>
+            <p className="error">{t('rsvp.error')}</p>
           )}
         </form>
       )}

@@ -1,55 +1,49 @@
-// Central place for every piece of invitation content.
-// Edit the values here; the sections read from this object.
+// Language-neutral invitation data: names, dates, places, links and keys.
+// Every text guests read lives in src/locales/<language>/translation.json.
 export const wedding = {
   couple: {
-    partnerOne: 'Groom',
-    partnerTwo: 'Bride',
+    partnerOne: 'Lici',
+    partnerTwo: 'Biel',
   },
-  date: '2027-06-12T16:00:00-03:00',
-  dateLabel: 'June 12, 2027',
-  hashtag: '#OurWedding',
-
-  story: {
-    title: 'Our story',
-    paragraphs: [
-      'Write here how you met.',
-      'Share a bit of the journey to the big day.',
-    ],
-  },
+  // ISO 8601 with the venue's UTC offset. Formatted per language by i18n.
+  date: '2027-07-03T10:00:00-03:00',
+  // Dates and times are shown in the venue's time zone for every guest.
+  timeZone: 'America/Sao_Paulo',
+  hashtag: '#LiciEBiel',
 
   events: [
     {
+      // `type` picks the title in translation.json (event.types.<type>).
       id: 'ceremony',
-      title: 'Ceremony',
-      time: '4:00 PM',
-      place: 'Church or venue name',
-      address: '123 Example St, City',
+      type: 'ceremony',
+      startsAt: '2027-07-03T10:00:00-03:00',
+      place: 'Nome do local da cerimônia',
+      address: 'Rua Exemplo, 123 - Cidade',
       mapUrl: 'https://maps.google.com',
     },
     {
       id: 'reception',
-      title: 'Reception',
-      time: '6:00 PM',
-      place: 'Reception venue name',
-      address: '456 Example Ave, City',
+      type: 'reception',
+      // Placeholder time: update with the real start of the party.
+      startsAt: '2027-07-03T12:00:00-03:00',
+      place: 'Nome do local da festa',
+      address: 'Avenida Exemplo, 456 - Cidade',
       mapUrl: 'https://maps.google.com',
     },
   ],
-
-  dressCode: 'Formal attire',
 
   gallery: [
     // Add image paths from /public, e.g. '/photos/01.jpg'
   ],
 
   rsvp: {
-    deadlineLabel: 'May 12, 2027',
+    // Placeholder deadline: update with the real one.
+    deadline: '2027-06-03T23:59:00-03:00',
     // Set a form endpoint (Formspree, Google Apps Script, etc.) to send replies.
     endpoint: '',
   },
 
   gifts: {
-    message: 'Your presence is our greatest gift. If you would like to give us something, here are a few options.',
     pixKey: 'pix-key@example.com',
     listUrl: '',
   },

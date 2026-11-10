@@ -1,11 +1,14 @@
+import { useTranslation } from 'react-i18next'
 import { Section } from '../components/Section'
-import { wedding } from '../data/wedding'
 
 export function Story() {
+  const { t } = useTranslation()
+  const paragraphs = t('story.paragraphs', { returnObjects: true })
+
   return (
-    <Section id="story" title={wedding.story.title}>
+    <Section id="story" title={t('story.title')}>
       <div className="prose">
-        {wedding.story.paragraphs.map((paragraph, index) => (
+        {paragraphs.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
       </div>

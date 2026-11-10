@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "{{partnerOne}} e {{partnerTwo}} · Convite de casamento",
+    "description": "Convite de casamento de {{partnerOne}} e {{partnerTwo}}"
+  },
+  "header": {
+    "menu": "Menu",
+    "nav": {
+      "story": "Nossa história",
+      "event": "O grande dia",
+      "gallery": "Fotos",
+      "rsvp": "Confirmar presença",
+      "gifts": "Presentes"
+    }
+  },
+  "dates": {
+    "long": "{{date, datetime(day: numeric; month: long; year: numeric)}}",
+    "time": "{{date, datetime(hour: 2-digit; minute: 2-digit)}}"
+  },
+  "hero": {
+    "eyebrow": "Sim, finalmente vai ter festa",
+    "joiner": "e",
+    "done": "O grande dia chegou!",
+    "countdownLabel": "Contagem regressiva",
+    "countdown": {
+      "days_one": "dia",
+      "days_other": "dias",
+      "hours_one": "hora",
+      "hours_other": "horas",
+      "minutes_one": "min",
+      "minutes_other": "min",
+      "seconds_one": "seg",
+      "seconds_other": "seg"
+    },
+    "cta": "Quero confirmar presença"
+  },
+  "story": {
+    "title": "Olha que fofinhos",
+    "paragraphs": [
+      "Sim, faz mais de 1 ano que a gente mora junto, mas você já viu como anda a economia?",
+      "Então, agora que terminamos de pagar nosso enxoval, hora de fazer novas parcelas!!",
+      "E você! Sim, você! Foi convidado para chorar muito na nossa cerimônia, dar pt na festa e/ou comer muito bem-casado."
+    ]
+  },
+  "event": {
+    "title": "O grande dia",
+    "types": {
+      "ceremony": "Cerimônia",
+      "reception": "Festa"
+    },
+    "viewOnMap": "Ver no mapa",
+    "dressCode": "Dress code: {{dressCode}}",
+    "dressCodeValue": "Esporte chique"
+  },
+  "gallery": {
+    "title": "Fotos",
+    "empty": "Nossas fotos chegam em breve.",
+    "photoAlt": "Foto do casal {{number}}"
+  },
+  "rsvp": {
+    "title": "Contamos com a sua presença",
+    "subtitle": "É sério, se não der pra vir avisa, tá?",
+    "deadline": "Responda até {{date}}.",
+    "nameLabel": "Seu nome completo",
+    "attendingLabel": "Vai poder vir?",
+    "attendingYes": "Vou siiiim, tô muito feliz com a festa",
+    "attendingNo": "Não vou poder ir, mas não quero atrair mazela",
+    "guestsLabel": "Quantas pessoas (contando com você)",
+    "messageLabel": "Recado para os noivos (opcional)",
+    "submit": "Enviar minha resposta",
+    "sending": "Enviando...",
+    "sent": "Resposta enviada. Obrigado por avisar!",
+    "error": "Não conseguimos enviar sua resposta. Tente de novo."
+  },
+  "gifts": {
+    "title": "Lista de presentes",
+    "message": "Já moramos juntos, já temos panela, sofá e três gatos que mandam na casa. Então, em vez de enxoval, montamos uma lista com o que realmente faz sentido pra gente. Escolha uma cota, faça o PIX e escreva o nome do presente na mensagem.",
+    "pixTitle": "PIX",
+    "copyKey": "Copiar chave",
+    "copied": "Chave copiada!",
+    "registryTitle": "Lista de presentes",
+    "viewRegistry": "Ver a lista"
+  },
+  "footer": {
+    "credits": "{{partnerOne}} e {{partnerTwo}} · {{date}}"
+  }
+}

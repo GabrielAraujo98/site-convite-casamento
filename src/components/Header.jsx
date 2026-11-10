@@ -1,15 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { wedding } from '../data/wedding'
 
-const links = [
-  { href: '#story', label: 'Story' },
-  { href: '#event', label: 'Event' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#rsvp', label: 'RSVP' },
-  { href: '#gifts', label: 'Gifts' },
-]
+const NAV_SECTIONS = ['story', 'event', 'gallery', 'rsvp', 'gifts']
 
 export function Header() {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const { partnerOne, partnerTwo } = wedding.couple
 
@@ -25,12 +21,12 @@ export function Header() {
           aria-controls="main-nav"
           onClick={() => setOpen((isOpen) => !isOpen)}
         >
-          Menu
+          {t('header.menu')}
         </button>
         <nav id="main-nav" className={`header__nav ${open ? 'is-open' : ''}`}>
-          {links.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
-              {link.label}
+          {NAV_SECTIONS.map((sectionId) => (
+            <a key={sectionId} href={`#${sectionId}`} onClick={() => setOpen(false)}>
+              {t(`header.nav.${sectionId}`)}
             </a>
           ))}
         </nav>
