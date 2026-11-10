@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+/*
+  "Lici e Biel" design system as Tailwind theme.
+  Each variable becomes a class. Examples:
+    --color-tangerine   -> bg-tangerine, text-tangerine, border-tangerine
+    --font-brush        -> font-brush
+    --text-display-lg   -> text-display-lg (size + line height + letter spacing)
+    --radius-button     -> rounded-button
+    --spacing-page      -> px-page, mt-page...
+  Change a value here and it updates everywhere on the site.
+*/
+@theme {
+  /* Colors */
+  --color-linen: #f6f2e7;          /* page background */
+  --color-linen-deep: #f3f1ed;     /* price tag background */
+  --color-paper: #ffffff;          /* text on colored buttons and the RSVP card */
+  --color-ink: #020202;            /* body text */
+  --color-ink-soft: #191919;       /* large formal headings */
+  --color-ink-button: #000000;     /* buttons on top of photos */
+  --color-merlot: #6a0000;         /* brush headlines */
+  --color-tangerine: #de680d;      /* primary buttons and the RSVP card */
+  --color-tangerine-edge: #f9512c; /* RSVP card outline */
+  --color-tangerine-veil: rgb(255 255 255 / 12%); /* RSVP answer options */
+  --color-olive: #53623a;          /* submit, back to top, prices, thin rules */
+  --color-bark: #623e2a;           /* gift card frame */
+
+  /* Fonts (loaded in index.html) */
+  --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
+  --font-brush: 'Permanent Marker', 'Marker Felt', cursive;
+  --font-body: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Pinyon Script', 'Snell Roundhand', cursive;
+  --font-date: 'Ovo', Georgia, serif;
+  --font-utility: 'Arimo', Arial, sans-serif;
+
+  /* Text styles */
+  --text-names: 48px;
+  --text-names--line-height: 1.1;
+  --text-names--letter-spacing: 0.14em;
+  --text-display-lg: 66px;
+  --text-display-lg--line-height: 0.92;
+  --text-display-lg--letter-spacing: 0.06em;
+  --text-display-md: 40px;
+  --text-display-md--line-height: 1.1;
+  --text-display-md--letter-spacing: 0.04em;
+  --text-brush-lg: 54px;
+  --text-brush-lg--line-height: 1.05;
+  --text-brush-md: 42px;
+  --text-brush-md--line-height: 1.15;
+  --text-brush-sm: 24px;
+  --text-brush-sm--line-height: 1.2;
+  --text-script: 32px;
+  --text-script--line-height: 1;
+  --text-date: 11px;
+  --text-date--letter-spacing: 0.32em;
+  --text-lead: 20px;
+  --text-lead--line-height: 1.4;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.4;
+  --text-gift-title: 19px;
+  --text-gift-title--line-height: 1.15;
+  --text-body: 14px;
+  --text-body--line-height: 1.4;
+  --text-gift-note: 11px;
+  --text-gift-note--line-height: 1.35;
+  --text-label: 12px;
+  --text-label--line-height: 1.3;
+  --text-option: 13px;
+  --text-option--line-height: 1.4;
+
+  /* Spacing */
+  --spacing-option: 6px;
+  --spacing-tight: 8px;
+  --spacing-card: 16px;
+  --spacing-form: 26px;
+  --spacing-block: 40px;
+  --spacing-gutter: 51px;
+  --spacing-page: 58px;
+  --spacing-section: 112px;
+
+  /* Corners */
+  --radius-field: 4px;
+  --radius-button: 6px;
+  --radius-card: 8px;
+}
+
+/* Global rules */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden bg-linen font-body text-body text-ink antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

@@ -1,43 +1,34 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Section } from '../components/Section'
-import { wedding } from '../data/wedding'
+import { Container } from '../components/Container'
+import { BrushHeading } from '../components/BrushHeading'
+import { GiftCard } from '../components/GiftCard'
+import { gifts } from '../data/gifts'
 
+// Gift list: title, intro, lace trim and the grid of gifts.
 export function Gifts() {
   const { t } = useTranslation()
-  const { pixKey, listUrl } = wedding.gifts
-  const [copied, setCopied] = useState(false)
-
-  async function copyPix() {
-    try {
-      await navigator.clipboard.writeText(pixKey)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (error) {
-      console.error('Could not copy PIX key', error)
-    }
-  }
+  const introLines = t('gifts.intro', { returnObjects: true })
 
   return (
-    <Section id="gifts" title={t('gifts.title')}>
-      <p className="center prose">{t('gifts.message')}</p>
-      <div className="gifts">
-        <div className="card">
-          <h3>{t('gifts.pixTitle')}</h3>
-          <p className="mono">{pixKey}</p>
-          <button className="button button--ghost" onClick={copyPix}>
-            {copied ? t('gifts.copied') : t('gifts.copyKey')}
-          </button>
-        </div>
-        {listUrl && (
-          <div className="card">
-            <h3>{t('gifts.registryTitle')}</h3>
-            <a href={listUrl} target="_blank" rel="noreferrer" className="button">
-              {t('gifts.viewRegistry')}
-            </a>
+    <section id="gifts" className="relative pb-section">
+      <Container>
+        <header className="flex flex-col items-center text-center">
+          <BrushHeading size="large">{t('gifts.title')}</BrushHeading>
+          <div className="mt-[30px] text-[14.5px] leading-normal">
+            {introLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
           </div>
-        )}
-      </div>
-    </Section>
+          <img className="h-auto w-[min(414px,100%)]" src="/images/ornaments/scallop-trim.svg" alt="" aria-hidden="true" />
+        </header>
+
+        {/* One column on phones, two on tablets, three on desktop */}
+        <div className="mt-20 grid gap-x-gutter gap-y-[60px] sm:grid-cols-2 lg:mt-[200px] lg:grid-cols-3 lg:gap-y-[100px]">
+          {gifts.map((gift) => (
+            <GiftCard key={gift.id} {...gift} />
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }

@@ -1,36 +1,34 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Header } from './components/Header'
-import { Footer } from './components/Footer'
 import { Hero } from './sections/Hero'
 import { Story } from './sections/Story'
-import { Event } from './sections/Event'
-import { Gallery } from './sections/Gallery'
+import { DressCode } from './sections/DressCode'
+import { ActionPhotos } from './sections/ActionPhotos'
 import { Rsvp } from './sections/Rsvp'
 import { Gifts } from './sections/Gifts'
+import { Closing } from './sections/Closing'
 import { wedding } from './data/wedding'
 
+// The invitation is one long page; sections appear in this order.
 export default function App() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   useEffect(() => {
-    const names = wedding.couple
-    document.title = t('meta.title', names)
-    document.querySelector('meta[name="description"]')?.setAttribute('content', t('meta.description', names))
-  }, [t, i18n.language])
+    document.title = t('meta.title', wedding.couple)
+    document.querySelector('meta[name="description"]')?.setAttribute('content', t('meta.description', wedding.couple))
+  }, [t])
 
   return (
     <>
-      <Header />
+      <Hero />
       <main>
-        <Hero />
         <Story />
-        <Event />
-        <Gallery />
+        <DressCode />
+        <ActionPhotos />
         <Rsvp />
         <Gifts />
       </main>
-      <Footer />
+      <Closing />
     </>
   )
 }

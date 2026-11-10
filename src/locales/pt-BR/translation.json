@@ -3,70 +3,48 @@
     "title": "{{partnerOne}} e {{partnerTwo}} · Convite de casamento",
     "description": "Convite de casamento de {{partnerOne}} e {{partnerTwo}}"
   },
-  "header": {
-    "menu": "Menu",
-    "nav": {
-      "story": "Nossa história",
-      "event": "O grande dia",
-      "gallery": "Fotos",
-      "rsvp": "Confirmar presença",
-      "gifts": "Presentes"
-    }
-  },
-  "dates": {
-    "long": "{{date, datetime(day: numeric; month: long; year: numeric)}}",
-    "time": "{{date, datetime(hour: 2-digit; minute: 2-digit)}}"
-  },
   "hero": {
-    "eyebrow": "Sim, finalmente vai ter festa",
     "joiner": "e",
-    "done": "O grande dia chegou!",
-    "countdownLabel": "Contagem regressiva",
-    "countdown": {
-      "days_one": "dia",
-      "days_other": "dias",
-      "hours_one": "hora",
-      "hours_other": "horas",
-      "minutes_one": "min",
-      "minutes_other": "min",
-      "seconds_one": "seg",
-      "seconds_other": "seg"
-    },
-    "cta": "Quero confirmar presença"
+    "dateLine": "{{date, datetime(day: 2-digit; month: long)}} {{date, datetime(year: numeric)}} | {{date, datetime(hour: numeric)}}h",
+    "tagline": "Sim, finalmente vai ter festa"
   },
   "story": {
     "title": "Olha que fofinhos",
+    "photoAlt": "{{partnerOne}} e {{partnerTwo}} sorrindo na praia",
     "paragraphs": [
       "Sim, faz mais de 1 ano que a gente mora junto, mas você já viu como anda a economia?",
       "Então, agora que terminamos de pagar nosso enxoval, hora de fazer novas parcelas!!",
       "E você! Sim, você! Foi convidado para chorar muito na nossa cerimônia, dar pt na festa e/ou comer muito bem-casado."
     ]
   },
-  "event": {
-    "title": "O grande dia",
-    "types": {
-      "ceremony": "Cerimônia",
-      "reception": "Festa"
-    },
-    "viewOnMap": "Ver no mapa",
-    "dressCode": "Dress code: {{dressCode}}",
-    "dressCodeValue": "Esporte chique"
+  "dressCode": {
+    "title": "Dress code",
+    "items": [
+      "Esporte chique",
+      "Será ao ar livre, então evita levar as crianças com roupas claras",
+      "Boa parte vai ser num gramado, então a noiva não recomenda usar salto fino",
+      "Não esperamos que ninguém use terno",
+      "Óculos de sol são bem vindos, mas não obrigatórios"
+    ],
+    "pinterest": "Na dúvida tem pasta no pinterest"
   },
-  "gallery": {
-    "title": "Fotos",
-    "empty": "Nossas fotos chegam em breve.",
-    "photoAlt": "Foto do casal {{number}}"
+  "actions": {
+    "rsvpPhotoAlt": "Cartão de confirmação de presença sobre um envelope",
+    "rsvp": "Quero confirmar presença",
+    "giftPhotoAlt": "Mãos segurando um presente com laço verde",
+    "gift": "Quero dar um presente"
   },
   "rsvp": {
     "title": "Contamos com a sua presença",
     "subtitle": "É sério, se não der pra vir avisa, tá?",
-    "deadline": "Responda até {{date}}.",
+    "giftButton": "Quero dar um presente",
     "nameLabel": "Seu nome completo",
-    "attendingLabel": "Vai poder vir?",
-    "attendingYes": "Vou siiiim, tô muito feliz com a festa",
-    "attendingNo": "Não vou poder ir, mas não quero atrair mazela",
-    "guestsLabel": "Quantas pessoas (contando com você)",
-    "messageLabel": "Recado para os noivos (opcional)",
+    "question": "Vai poder vir?",
+    "answers": {
+      "yes": "Vou siiiim, tô muito feliz com a festa",
+      "flu": "Não estarei comparecendo, pois gripa-lo-ei nesta data, horário e local",
+      "no": "Não vou poder ir, mas não quero atrair mazela"
+    },
     "submit": "Enviar minha resposta",
     "sending": "Enviando...",
     "sent": "Resposta enviada. Obrigado por avisar!",
@@ -74,14 +52,38 @@
   },
   "gifts": {
     "title": "Lista de presentes",
-    "message": "Já moramos juntos, já temos panela, sofá e três gatos que mandam na casa. Então, em vez de enxoval, montamos uma lista com o que realmente faz sentido pra gente. Escolha uma cota, faça o PIX e escreva o nome do presente na mensagem.",
-    "pixTitle": "PIX",
-    "copyKey": "Copiar chave",
-    "copied": "Chave copiada!",
-    "registryTitle": "Lista de presentes",
-    "viewRegistry": "Ver a lista"
+    "intro": [
+      "Já moramos juntos, já temos panela, sofá e três gatos que mandam na casa.",
+      "Então, em vez de enxoval, montamos uma lista com o que realmente faz sentido pra gente.",
+      "Escolha uma cota, faça o PIX e escreva o nome do presente na mensagem.",
+      "Prometemos usar cada centavo com responsabilidade (ou quase)."
+    ],
+    "price": "{{price, currency(BRL)}}",
+    "pixCopied": "Chave PIX copiada!",
+    "copyPixFor": "Copiar a chave PIX para dar o presente: {{gift}}",
+    "items": {
+      "lightsabers": { "title": "Sabres de luz", "note": "pro casal resolver as discussões com maturidade" },
+      "fourthCat": { "title": "Reserva para aquisição de um quarto gato", "note": "3 não são suficientes" },
+      "maracanaTicket": { "title": "Ingresso pro Maracanã", "note": "pra ver o fluzão ganhar em casa" },
+      "forroClass": { "title": "Aula de forró", "note": "pra, finalmente, a gente aprender a dançar" },
+      "brideMassage": { "title": "Massagem pra noiva", "note": "ter 3 trabalhos não é fácil" },
+      "groomPhoto": { "title": "Obrigar o noivo a tirar foto", "note": "e vai ter que sorrir" },
+      "vetVisit": { "title": "Consulta no veterinário", "note": "tudo aqui é x3" },
+      "fluminenseJersey": { "title": "Camisa nova do Flu", "note": "agora sem patrocínio de bet" },
+      "bouquet": { "title": "Jogar o buquê na sua direção", "note": "licinha vai se esforçar, boa sorte." },
+      "gameDayProjector": { "title": "Projetor pra dia de jogo", "note": "Pra ver gol no telão" },
+      "sickleAndHammer": { "title": "Kit foice e martelo", "note": "multiuso para fins bruxescos e pra tomar os meios de produção" },
+      "djRequest": { "title": "Pedido de música pro DJ", "note": "Escreve o pedido na mensagem do pix" },
+      "catShelves": { "title": "Gatificação da casa", "note": "dar uso pro pé direito mais alto de jampa" },
+      "playstationController": { "title": "Controle extra de PlayStation", "note": "Oficializar mais uma vez a vida de player 2" },
+      "ghostMeter": { "title": "Medidor de atividade paranormal", "note": "Pra bruxa conferir uma coisinha aqui no corredor" },
+      "energyDrink": { "title": "Energético pra noiva não dormir no meio da festa", "note": "autoexplicativo" },
+      "brokeGuest": { "title": "Amo vocês, mas gastei toda a grana no look e salão", "note": "vamos pensar se a gente te perdoa" },
+      "thankYouFriend": { "title": "Se você se sentir tocado", "note": "Vamos ser eternamente gratos" }
+    }
   },
-  "footer": {
-    "credits": "{{partnerOne}} e {{partnerTwo}} · {{date}}"
+  "closing": {
+    "title": "Ih rapaz, você chegou no final",
+    "backToTop": "Voltar pro início"
   }
 }
