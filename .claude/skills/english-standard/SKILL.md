@@ -25,7 +25,7 @@ Goal: everything developers read is written in English. Everything guests read o
    - `kebab-case` (BEM style: `block__element--modifier`) for CSS classes.
 4. User-facing text on the site (headings, labels, buttons, placeholders, alt text, aria labels, error and success messages, page title and description) is Brazilian Portuguese and never hardcoded in components:
    - Put it in `src/locales/pt-BR/translation.json` and read it with `t('key')` from `react-i18next`.
-   - Format dates and times with `useDateFormat` (venue time zone) and plurals with i18next `_one` / `_other` keys.
+   - Format dates with `useDateFormat` (venue time zone), prices with `currency(BRL)` and plurals with i18next `_one` / `_other` keys.
    - `src/data/wedding.js` holds only language-neutral data: names, ISO dates, places, addresses, links, keys.
    - `<html lang="pt-BR">`.
    - When adding a language, create `src/locales/<code>/translation.json` with the same keys and register it in `src/i18n.js`.
