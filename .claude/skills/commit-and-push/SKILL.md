@@ -46,5 +46,5 @@ Goal: run the commit and push flow with as little reading and text as possible.
 
 ## Language
 
-14. Commit messages, code, comments and file names must be in English. The invitation text shown to guests on the site stays in Portuguese.
+14. All project content must be in English: commit messages, code, comments, names, UI text on the site and documents. Follow the `english-standard` skill. If a file about to be committed has Portuguese project content, warn the user before committing.
 15. Replies to the user in the chat stay in Portuguese.
