@@ -27,7 +27,7 @@
 
   /* Fonts (loaded in index.html) */
   --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
-  --font-brush: 'Permanent Marker', 'Marker Felt', cursive;
+  --font-brush: 'Tangerine', 'Snell Roundhand', cursive;
   --font-body: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
   --font-script: 'Pinyon Script', 'Snell Roundhand', cursive;
   --font-date: 'Ovo', Georgia, serif;
@@ -43,12 +43,12 @@
   --text-display-md: 40px;
   --text-display-md--line-height: 1.1;
   --text-display-md--letter-spacing: 0.04em;
-  --text-brush-lg: 54px;
-  --text-brush-lg--line-height: 1.05;
-  --text-brush-md: 42px;
-  --text-brush-md--line-height: 1.15;
-  --text-brush-sm: 24px;
-  --text-brush-sm--line-height: 1.2;
+  --text-brush-lg: 76px;
+  --text-brush-lg--line-height: 1;
+  --text-brush-md: 60px;
+  --text-brush-md--line-height: 1;
+  --text-brush-sm: 34px;
+  --text-brush-sm--line-height: 1.1;
   --text-script: 32px;
   --text-script--line-height: 1;
   --text-date: 11px;

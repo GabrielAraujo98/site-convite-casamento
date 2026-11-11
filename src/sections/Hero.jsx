@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Ornament } from '../components/Ornament'
-import { BrushHeading } from '../components/BrushHeading'
+import { CurvedText } from '../components/CurvedText'
 import { wedding } from '../data/wedding'
 import { useDateFormat } from '../hooks/useDateFormat'
 
@@ -33,9 +33,9 @@ export function Hero() {
         {formatDate('hero.dateLine', wedding.date)}
       </p>
 
-      <BrushHeading as="p" size="small" className="relative mt-10 rotate-6 md:rotate-12">
+      <CurvedText width={460} curve={-55} fontSize={58} className="relative -mt-[30px] w-full max-w-[520px] rotate-6 md:rotate-12">
         {t('hero.tagline')}
-      </BrushHeading>
+      </CurvedText>
     </header>
   )
 }

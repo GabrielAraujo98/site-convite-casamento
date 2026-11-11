@@ -1,8 +1,8 @@
 // Font size of each heading size (smaller on phones).
 const SIZES = {
-  small: 'text-[20px] md:text-brush-sm',
-  medium: 'text-[32px] md:text-brush-md',
-  large: 'text-[40px] md:text-brush-lg',
+  small: 'text-[28px] md:text-brush-sm',
+  medium: 'text-[46px] leading-none md:text-brush-md',
+  large: 'text-[56px] leading-none md:text-brush-lg',
 }
 
 /**
@@ -11,7 +11,7 @@ const SIZES = {
  */
 export function BrushHeading({ as: Tag = 'h2', size = 'medium', className = '', children }) {
   return (
-    <Tag className={`font-brush font-normal text-balance uppercase text-merlot ${SIZES[size]} ${className}`}>
+    <Tag className={`font-brush font-normal text-balance text-merlot ${SIZES[size]} ${className}`}>
       {children}
     </Tag>
   )
