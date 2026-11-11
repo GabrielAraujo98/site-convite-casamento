@@ -82,6 +82,9 @@
   --radius-field: 4px;
   --radius-button: 6px;
   --radius-card: 8px;
+
+  /* Polaroid Shadows */
+  --shadow-polaroid: 0 6px 18px rgb(2 2 2 / 15%);
 }
 
 /* Global rules */

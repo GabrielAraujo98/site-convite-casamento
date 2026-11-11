@@ -3,6 +3,7 @@ const VARIANTS = {
   tangerine: 'bg-tangerine text-linen', // main action
   olive: 'bg-olive text-paper', // quiet action
   ink: 'bg-ink-button text-paper focus-visible:outline-paper', // on top of photos
+  outline: 'border-[0.75px] border-olive bg-linen-deep text-olive hover:bg-linen focus-visible:outline-olive', // gift price
 }
 
 // Sizes measured in the PDF.
@@ -11,12 +12,13 @@ const SIZES = {
   large: 'min-h-[51px] min-w-[251px] px-7',
   wide: 'min-h-[51px] min-w-[306px] px-7',
   full: 'min-h-[35px] w-full px-5 rounded-full!', // RSVP submit (pill)
+  compact: 'min-h-[33px] px-4 font-utility text-[13px]!', // gift price
 }
 
 /**
  * Site button. Renders a link when `href` is given, otherwise a <button>.
- * variant: 'tangerine' | 'olive' | 'ink'
- * size:    'small' | 'large' | 'wide' | 'full'
+ * variant: 'tangerine' | 'olive' | 'ink' | 'outline'
+ * size:    'small' | 'large' | 'wide' | 'full' | 'compact'
  */
 export function Button({ variant = 'tangerine', size = 'large', href, className = '', children, ...props }) {
   const classes = [

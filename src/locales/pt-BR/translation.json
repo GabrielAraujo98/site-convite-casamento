@@ -59,8 +59,16 @@
       "Prometemos usar cada centavo com responsabilidade (ou quase)."
     ],
     "price": "{{price, currency(BRL)}}",
-    "pixCopied": "Chave PIX copiada!",
-    "copyPixFor": "Copiar a chave PIX para dar o presente: {{gift}}",
+    "giveButton": "Presentear",
+    "openPixFor": "Presentear com: {{gift}}",
+    "modal": {
+      "close": "Fechar",
+      "qrAlt": "QR code do PIX",
+      "scanHint": "Escaneie o QR code com o app do seu banco. O valor já vem preenchido.",
+      "keyLabel": "Chave PIX",
+      "copyKey": "Copiar chave",
+      "copiedKey": "Chave copiada!"
+    },
     "items": {
       "lightsabers": { "title": "Sabres de luz", "note": "pro casal resolver as discussões com maturidade" },
       "fourthCat": { "title": "Reserva para aquisição de um quarto gato", "note": "3 não são suficientes" },

@@ -4,10 +4,13 @@ import { BrushHeading } from '../components/BrushHeading'
 import { GiftCard } from '../components/GiftCard'
 import { gifts } from '../data/gifts'
 import { imageUrl } from '../utils/imageUrl'
+import { useState } from 'react'
+import { PixModal } from '../components/PixModal'
 
 // Gift list: title, intro, lace trim and the grid of gifts.
 export function Gifts() {
   const { t } = useTranslation()
+  const [selectedGift, setSelectedGift] = useState(null)
   const introLines = t('gifts.intro', { returnObjects: true })
 
   return (
@@ -25,11 +28,14 @@ export function Gifts() {
 
         {/* One column on phones, two on tablets, three on desktop */}
         <div className="mt-20 grid gap-x-gutter gap-y-[60px] sm:grid-cols-2 lg:mt-[200px] lg:grid-cols-3 lg:gap-y-[100px]">
-          {gifts.map((gift) => (
-            <GiftCard key={gift.id} {...gift} />
+          {gifts.map((gift, index) => (
+            <GiftCard key={gift.id} {...gift} index={index}
+            onSelect={() => setSelectedGift(gift)} />
           ))}
         </div>
       </Container>
+
+      <PixModal gift={selectedGift} onClose={() => setSelectedGift(null)} />
     </section>
   )
 }

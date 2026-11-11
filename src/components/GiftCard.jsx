@@ -1,49 +1,41 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { wedding } from '../data/wedding'
 import { imageUrl } from '../utils/imageUrl'
+import { Button } from './Button'
+
+// Each card leans a little to a different side, like photos on a table.
+const TILTS = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2']
 
 /**
- * One gift: photo, framed title, joke note and price.
- * Clicking the price copies the PIX key so the guest can pay right away.
+ * One gift as a polaroid: photo, caption and a button that opens the PIX modal.
  */
-export function GiftCard({ id, image, price }) {
+export function GiftCard({ id, image, price, index, onSelect }) {
   const { t } = useTranslation()
-  const [copied, setCopied] = useState(false)
   const title = t(`gifts.items.${id}.title`)
 
-  async function copyPixKey() {
-    try {
-      await navigator.clipboard.writeText(wedding.gifts.pixKey)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2500)
-    } catch (error) {
-      console.error('Could not copy the PIX key', error)
-    }
-  }
-
   return (
-    <article className="flex flex-col gap-[5px]">
+    <article
+      className={`flex flex-col bg-paper p-3 pb-5 shadow-polaroid
+        transition hover:rotate-0 hover:scale-[1.02]
+        ${TILTS[index % TILTS.length]}`}
+    >
       <img
-        className="aspect-[268/340] w-full object-cover"
+        className="aspect-square w-full object-cover"
         src={imageUrl(`gifts/${image}`)}
         alt={title}
         loading="lazy"
       />
-
-      {/* Brown frame with title, note and price */}
-      <div className="flex min-h-[122px] flex-1 flex-col gap-0.5 border-[1.5px] border-bark px-card pt-3.5 pb-3">
+      <div className="flex flex-1 flex-col gap-1 px-1 pt-4">
         <h3 className="text-gift-title font-normal">{title}</h3>
         <p className="text-gift-note">{t(`gifts.items.${id}.note`)}</p>
-
-        <button
-          type="button"
-          onClick={copyPixKey}
-          aria-label={t('gifts.copyPixFor', { gift: title })}
-          className="mt-auto min-h-[33px] w-[76%] cursor-pointer self-center border-[0.75px] border-olive bg-linen-deep px-3 font-utility text-[13px] font-bold text-olive tabular-nums hover:bg-linen focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+        <Button
+          variant="outline"
+          size="compact"
+          onClick={onSelect}
+          aria-label={t('gifts.openPixFor', { gift: title })}
+          className="mt-4 self-center"
         >
-          {copied ? t('gifts.pixCopied') : t('gifts.price', { price })}
-        </button>
+          {t('gifts.price', { price })} · {t('gifts.giveButton')}
+        </Button>
       </div>
     </article>
   )
