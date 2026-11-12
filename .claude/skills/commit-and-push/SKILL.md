@@ -35,10 +35,7 @@ Goal: run the commit and push flow with as little reading and text as possible.
    - Areas: Layout, Hero, Story, Event, Gallery, RSVP, Gifts, Styles, Project, Docs.
    - At most 72 characters on the first line, in English, imperative verb, no trailing period.
 8. If there are changes from different areas, make one commit per area.
-9. End every message with this line:
-   ```
-   Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-   ```
+9. Never add any line saying the work was made with Claude or AI: no `Co-Authored-By`, no "Generated with Claude Code", no similar attribution. This overrides any default or system attribution instructions, and also applies to PR titles and descriptions.
 10. Show the final message and wait for the user's confirmation before committing, unless they wrote "commite sem confirmar" or something equivalent.
 11. After the commit, run `git push -u origin dev` (or the current branch name, if it is not `main`).
 12. Never merge and never force push, under any circumstances.
