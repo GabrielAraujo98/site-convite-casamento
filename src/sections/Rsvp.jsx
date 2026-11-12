@@ -25,7 +25,7 @@ export function Rsvp() {
       if (wedding.rsvp.endpoint) {
         const response = await fetch(wedding.rsvp.endpoint, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(form),
         })
         if (!response.ok) throw new Error(`RSVP request failed: ${response.status}`)
