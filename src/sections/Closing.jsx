@@ -8,9 +8,10 @@ export function Closing() {
   const { t } = useTranslation()
 
   return (
-    <footer className="relative flex flex-col items-center gap-[18px] overflow-hidden px-5 pt-[110px] pb-[70px] text-center md:px-page">
-      <Ornament name="orange-branch-corner" className="-bottom-[110px] -left-20 w-[150px] -rotate-[34deg] md:-bottom-[200px] md:-left-[140px] md:w-[256px]" />
-      <Ornament name="orange-branch-corner" className="-right-20 -bottom-[100px] w-[150px] -rotate-[58deg] md:-right-[170px] md:-bottom-[190px] md:w-[256px]" />
+    <footer className="relative flex flex-col items-center gap-[18px] overflow-hidden px-5 pt-[110px] pb-[230px] text-center md:px-page md:pb-[160px]">
+      {/* Larger and further in than the PDF, so they fill the corners */}
+      <Ornament name="orange-branch-corner" className="-bottom-[150px] -left-14 w-[190px] -rotate-[34deg] md:-bottom-[260px] md:-left-[80px] md:w-[340px]" />
+      <Ornament name="orange-branch-corner" className="-right-14 -bottom-[140px] w-[190px] -rotate-[22deg] md:-right-[100px] md:-bottom-[250px] md:w-[340px]" />
 
       <BrushHeading className="relative z-10">{t('closing.title')}</BrushHeading>
       <Button variant="olive" size="small" href="#top" className="relative z-10">
