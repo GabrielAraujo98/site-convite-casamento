@@ -19,8 +19,9 @@ const SIZES = {
  * Site button. Renders a link when `href` is given, otherwise a <button>.
  * variant: 'tangerine' | 'olive' | 'ink' | 'outline'
  * size:    'small' | 'large' | 'wide' | 'full' | 'compact'
+ * as="span": only looks like a button, for use inside something that is already clickable.
  */
-export function Button({ variant = 'tangerine', size = 'large', href, className = '', children, ...props }) {
+export function Button({ as, variant = 'tangerine', size = 'large', href, className = '', children, ...props }) {
   const classes = [
     'inline-flex items-center justify-center rounded-button text-center text-body font-bold leading-tight no-underline',
     'cursor-pointer transition hover:brightness-110 disabled:cursor-wait disabled:opacity-60',
@@ -29,6 +30,14 @@ export function Button({ variant = 'tangerine', size = 'large', href, className 
     SIZES[size],
     className,
   ].join(' ')
+
+  if (as === 'span') {
+    return (
+      <span className={classes} {...props}>
+        {children}
+      </span>
+    )
+  }
 
   if (href) {
     return (

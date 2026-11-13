@@ -24,17 +24,18 @@
   --color-tangerine-veil: rgb(255 255 255 / 12%); /* RSVP answer options */
   --color-olive: #53623a;          /* submit, back to top, prices, thin rules */
   --color-bark: #623e2a;           /* gift card frame */
+  --color-sand: #c9b896;           /* crochet trim between sections */
 
   /* Fonts (loaded in index.html) */
   --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
-  --font-brush: 'Tangerine', 'Snell Roundhand', cursive;
+  --font-brush: 'Grape Nuts', 'Marker Felt', cursive;
   --font-body: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
   --font-script: 'Pinyon Script', 'Snell Roundhand', cursive;
   --font-date: 'Ovo', Georgia, serif;
   --font-utility: 'Arimo', Arial, sans-serif;
 
   /* Text styles */
-  --text-names: 48px;
+  --text-names: 64px;
   --text-names--line-height: 1.1;
   --text-names--letter-spacing: 0.14em;
   --text-display-lg: 66px;
@@ -43,11 +44,13 @@
   --text-display-md: 40px;
   --text-display-md--line-height: 1.1;
   --text-display-md--letter-spacing: 0.04em;
-  --text-brush-lg: 76px;
+  --text-brush-xl: 64px;
+  --text-brush-xl--line-height: 1;
+  --text-brush-lg: 52px;
   --text-brush-lg--line-height: 1;
-  --text-brush-md: 60px;
+  --text-brush-md: 42px;
   --text-brush-md--line-height: 1;
-  --text-brush-sm: 34px;
+  --text-brush-sm: 26px;
   --text-brush-sm--line-height: 1.1;
   --text-script: 32px;
   --text-script--line-height: 1;
@@ -91,6 +94,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
@@ -100,6 +104,21 @@
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+  }
+}
+
+/* Orange blossoms falling after a "yes" RSVP (see FallingBlossoms.jsx) */
+@layer components {
+  .falling-blossom {
+    position: absolute;
+    top: -80px;
+    animation: falling-blossom linear forwards;
+  }
+
+  @keyframes falling-blossom {
+    to {
+      transform: translateY(calc(100vh + 160px)) rotate(var(--spin, 540deg));
     }
   }
 }
