@@ -3,27 +3,32 @@ import { Container } from '../components/Container'
 import { BrushHeading } from '../components/BrushHeading'
 import { GiftCard } from '../components/GiftCard'
 import { gifts } from '../data/gifts'
-import { imageUrl } from '../utils/imageUrl'
+import { Ornament } from '../components/Ornament'
 import { useState } from 'react'
 import { PixModal } from '../components/PixModal'
 
-// Gift list: title, intro, lace trim and the grid of gifts.
+// Gift list: title, intro between two ivy branches and the grid of gifts.
 export function Gifts() {
   const { t } = useTranslation()
   const [selectedGift, setSelectedGift] = useState(null)
   const introLines = t('gifts.intro', { returnObjects: true })
 
   return (
-    <section id="gifts" className="relative pb-section">
+    <section id="gifts" className="relative pt-16 pb-section lg:pt-[90px]">
       <Container>
         <header className="flex flex-col items-center text-center">
-          <BrushHeading size="large">{t('gifts.title')}</BrushHeading>
-          <div className="mt-[30px] text-[14.5px] leading-normal">
-            {introLines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
+          <BrushHeading size="xlarge">{t('gifts.title')}</BrushHeading>
+          <div className="relative mt-[30px]">
+            {/* A light ivy branch on each side of the intro */}
+            <Ornament name="ivy-story" className="-bottom-[120px] -left-[435px] hidden w-[490px] rotate-[6deg] -scale-y-100 lg:block" />
+            <Ornament name="ivy-story" className="-right-[435px] -bottom-[120px] hidden w-[490px] rotate-[174deg] lg:block" />
+
+            <div className="relative z-10 text-body-lg leading-normal md:text-lead">
+              {introLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
           </div>
-          <img className="h-auto w-[min(414px,100%)]" src={imageUrl('ornaments/scallop-trim.svg')} alt="" aria-hidden="true" />
         </header>
 
         {/* One column on phones, two on tablets, three on desktop */}
