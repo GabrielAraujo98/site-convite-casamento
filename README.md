@@ -24,7 +24,7 @@ The page copies the invitation in `base-convite-casamento.pdf`, section by secti
 ```
 public/images/
   ornaments/          # orange branches, ivy, doily, lace trim (from the PDF)
-  photos/             # couple photo and the two call-to-action photos
+  photos/             # couple photo
   gifts/              # one photo per gift
 src/
   App.jsx             # list of sections, in page order
@@ -32,8 +32,10 @@ src/
   data/gifts.js       # gift list: id, image file and price
   locales/pt-BR/      # translation.json: every text guests read
   styles/index.css    # Tailwind setup + design system theme (colors, fonts, text sizes, spacing)
-  components/         # reusable pieces: Container, Button, BrushHeading, DisplayHeading, Ornament, GiftCard
-  sections/           # one file per section: Hero, Story, DressCode, ActionPhotos, Rsvp, Gifts, Closing
+  components/         # reusable pieces: Container, Button, BrushHeading, DisplayHeading, Ornament, GiftCard,
+                      # ParallaxPhoto, LaceDivider, CrochetTexture, BranchCurtain, FallingBlossoms
+  hooks/              # useScrollFrame (parallax and curtain), useDateFormat, useCopyToClipboard
+  sections/           # one file per section: Hero, Story, Details, DressCode, Rsvp, Gifts, Closing
 ```
 
 Styling uses [Tailwind CSS](https://tailwindcss.com/) v4: classes go straight in the JSX (`className="bg-tangerine rounded-button"`). The design system tokens live in `@theme` inside `src/styles/index.css` and become classes:
@@ -58,6 +60,8 @@ Classes are mobile first: no prefix = phones, `md:` = 768px and up, `lg:` = 1024
 | Add, remove or reprice a gift | `src/data/gifts.js` (image in `public/images/gifts/`, text in `translation.json` under `gifts.items`) |
 | A color, font or text size for the whole site | `src/styles/index.css` (`@theme`) |
 | Position, size or angle of an ornament | the `className` of its `<Ornament>` in the section (e.g. `src/sections/Hero.jsx`) |
+| Parallax speed of an ornament | the `speed` prop of its `<Ornament>` (positive = in front, negative = behind, 0 = still) |
+| Branches of the RSVP curtain | `LEFT_BRANCHES` / `RIGHT_BRANCHES` in `src/components/BranchCurtain.jsx` |
 | Button colors or sizes | `VARIANTS` / `SIZES` in `src/components/Button.jsx` |
 | Section order | `src/App.jsx` |
 
@@ -73,7 +77,10 @@ The site uses [react-i18next](https://react.i18next.com/). Brazilian Portuguese 
 - To add a language, copy `src/locales/pt-BR/translation.json` to `src/locales/<code>/translation.json`, translate the values (keep the keys), and register it in `src/i18n.js`.
 
 The RSVP form sends a JSON POST to `wedding.rsvp.endpoint`
-(e.g. Formspree or Google Apps Script). With no endpoint set, it only logs to the console.
+(e.g. Formspree or Google Apps Script) with `name`, `answer` (`sim` or `não`, from `wedding.rsvp.sheetAnswers`)
+and `shoeSize`. With no endpoint set, it only logs to the console.
+
+Parallax, the RSVP branch curtain and the falling blossoms are turned off for guests whose system asks for reduced motion.
 
 ## Conventions
 
