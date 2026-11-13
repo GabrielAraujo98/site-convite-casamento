@@ -17,22 +17,24 @@
       "E você! Sim, você! Foi convidado para chorar muito na nossa cerimônia, dar pt na festa e/ou comer muito bem-casado."
     ]
   },
+  "details": {
+    "title": "O que você precisa saber:",
+    "dateLabel": "Data:",
+    "date": "{{date, datetime(day: 2-digit; month: 2-digit; year: numeric)}} ({{date, datetime(weekday: long)}})",
+    "timeLabel": "Horário:",
+    "time": "{{date, datetime(hour: numeric)}}h",
+    "venueLabel": "Local:"
+  },
   "dressCode": {
     "title": "Dress code",
     "items": [
-      "Esporte chique",
+      "Traje esporte fino",
       "Será ao ar livre, então evita levar as crianças com roupas claras",
       "Boa parte vai ser num gramado, então a noiva não recomenda usar salto fino",
       "Não esperamos que ninguém use terno",
       "Óculos de sol são bem vindos, mas não obrigatórios"
     ],
     "pinterest": "Na dúvida tem pasta no pinterest"
-  },
-  "actions": {
-    "rsvpPhotoAlt": "Cartão de confirmação de presença sobre um envelope",
-    "rsvp": "Quero confirmar presença",
-    "giftPhotoAlt": "Mãos segurando um presente com laço verde",
-    "gift": "Quero dar um presente"
   },
   "rsvp": {
     "title": "Contamos com a sua presença",
@@ -42,9 +44,9 @@
     "question": "Vai poder vir?",
     "answers": {
       "yes": "Vou siiiim, tô muito feliz com a festa",
-      "flu": "Não estarei comparecendo, pois gripa-lo-ei nesta data, horário e local",
-      "no": "Não vou poder ir, mas não quero atrair mazela"
+      "flu": "Não estarei comparecendo, pois gripa-lo-ei nesta data, horário e local"
     },
+    "shoeSizeLabel": "Mulheres, favor incluir aqui o tamanho do seu pezinho. Homens, pode deixar em branco.",
     "submit": "Enviar minha resposta",
     "sending": "Enviando...",
     "sent": "Resposta enviada. Obrigado por avisar!",
