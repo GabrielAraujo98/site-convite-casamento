@@ -7,7 +7,7 @@ export const wedding = {
   },
 
   // ISO 8601 with the venue's UTC offset.
-  date: '2027-07-03T16:00:00-03:00',
+  date: '2027-07-03T15:00:00-03:00',
   // Dates and times are shown in the venue's time zone for every guest.
   timeZone: 'America/Sao_Paulo',
 
