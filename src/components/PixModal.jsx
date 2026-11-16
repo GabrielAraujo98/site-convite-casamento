@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next';
 import { Button } from "./Button";
-import { wedding } from "../data/wedding";
 import { imageUrl } from "../utils/imageUrl";
 import { useCopyToClipboard } from "../hooks/useCopyToClipboard";
 
@@ -9,7 +8,6 @@ export function PixModal({ gift, onClose }) {
     const { t } = useTranslation();
     const dialogRef = useRef(null);
     const { copied, copy } = useCopyToClipboard();
-    const { pixKey } = wedding.gifts;
 
     useEffect(() => {
         const dialog = dialogRef.current;
@@ -58,14 +56,14 @@ export function PixModal({ gift, onClose }) {
                     />
                     <p className="text-gift-note">{t('gifts.modal.scanHint')}</p>
 
-                    {/* PIX key + copy button */}
+                    {/* PIX copy-and-paste code + copy button */}
                     <div className="flex w-full flex-col gap-2 text-left">
-                        <span className="font-utility text-label font-bold">{t('gifts.modal.keyLabel')}</span>
+                        <span className="font-utility text-label font-bold">{t('gifts.modal.codeLabel')}</span>
                         <code className="rounded-field border-[0.75px] border-olive bg-linen-deep px-3 py-2 break-all">
-                            {pixKey}
+                            {gift.pixCode}
                         </code>
-                        <Button variant="olive" size="wide" onClick={() => copy(pixKey)}>
-                            {copied ? t('gifts.modal.copiedKey') : t('gifts.modal.copyKey')}
+                        <Button variant="olive" size="wide" onClick={() => copy(gift.pixCode)}>
+                            {copied ? t('gifts.modal.copiedCode') : t('gifts.modal.copyCode')}
                         </Button>
                     </div>
                 </div>

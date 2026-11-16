@@ -67,9 +67,9 @@
       "close": "Fechar",
       "qrAlt": "QR code do PIX",
       "scanHint": "Escaneie o QR code com o app do seu banco. O valor já vem preenchido.",
-      "keyLabel": "Chave PIX",
-      "copyKey": "Copiar chave",
-      "copiedKey": "Chave copiada!"
+      "codeLabel": "PIX copia e cola",
+      "copyCode": "Copiar código",
+      "copiedCode": "Código copiado!"
     },
     "items": {
       "lightsabers": { "title": "Sabres de luz", "note": "pro casal resolver as discussões com maturidade" },

@@ -28,9 +28,4 @@ export const wedding = {
     // While empty, replies are only logged in the browser console.
     endpoint: 'https://script.google.com/macros/s/AKfycbzjE7zt7goalkL6y8fuZYi4xp-5zBk7XeWP0ODRrMnSBCShjbkqEYZCUfV986_T3Acx7A/exec',
   },
-
-  gifts: {
-    // Placeholder: replace with the real PIX key.
-    pixKey: 'pix-key@example.com',
-  },
 }
